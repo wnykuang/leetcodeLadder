@@ -9,10 +9,6 @@
       "AttributeType": "N"
     },
     {
-      "AttributeName": "title",
-      "AttributeType": "S"
-    },
-    {
       "AttributeName": "dummyPartitionKey",
       "AttributeType": "S"
     }
@@ -33,7 +29,7 @@
       "IndexName": "IdIndex",
       "KeySchema": [
         {
-          "AttributeName": "questionId",
+          "AttributeName": "dummyPartitionKey",
           "KeyType": "HASH"
         },
         {
