@@ -19,5 +19,3 @@ def hello_world():
     return f"{app.config['DYNAMO_LOCAL_HOST']}:{app.config['DYNAMO_LOCAL_PORT']}"
 
 
-if __name__ == '__main__':
-    app.run()

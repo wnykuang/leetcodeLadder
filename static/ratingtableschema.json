@@ -1,0 +1,73 @@
+{
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "questionId",
+      "AttributeType": "N"
+    },
+    {
+      "AttributeName": "questionRating",
+      "AttributeType": "N"
+    },
+    {
+      "AttributeName": "title",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "dummyPartitionKey",
+      "AttributeType": "S"
+    }
+  ],
+  "TableName": "problemRating",
+  "KeySchema": [
+    {
+      "AttributeName": "dummyPartitionKey",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "questionRating",
+      "KeyType": "RANGE"
+    }
+  ],
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "IdIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "questionId",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "questionId",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
+      }
+    }
+  ],
+  "BillingMode": "PROVISIONED",
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 5,
+    "WriteCapacityUnits": 5
+  },
+  "StreamSpecification": {
+    "StreamEnabled": true,
+    "StreamViewType": "OLD_IMAGE"
+  },
+  "SSESpecification": {
+    "Enabled": true,
+    "SSEType": "AES256",
+    "KMSMasterKeyId": ""
+  },
+  "Tags": [
+    {
+      "Key": "Environment",
+      "Value": "Test"
+    }
+  ]
+}

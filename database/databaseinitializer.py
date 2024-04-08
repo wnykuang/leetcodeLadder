@@ -11,7 +11,7 @@ class Databaseinitializer:
         self.app.config['DYNAMO_ENABLE_LOCAL'] = True
         self.app.config['DYNAMO_LOCAL_HOST'] = 'localhost'
         self.app.config['DYNAMO_LOCAL_PORT'] = 8000
-        self.app.run()
+        print(self.db.tables)
         return self.app
 
     def create_table(self, table_name: str, schema: dict):
