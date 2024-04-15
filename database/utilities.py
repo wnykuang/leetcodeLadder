@@ -14,4 +14,4 @@ def generateJson(file_path):
 if __name__ == "__main__":
     current_file_path = os.path.realpath(__file__)
     print(current_file_path)
-    generateJson("../static/questionRating.txt")
+    generateJson("../static/problemRating.txt")
